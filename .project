@@ -6,36 +6,32 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
-			<name>com.qnx.tools.ide.qde.core.cbuilder</name>
+			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
 			<triggers>clean,full,incremental,</triggers>
 			<arguments>
 				<dictionary>
-					<key>org.eclipse.cdt.core.errorOutputParser</key>
-					<value>com.qnx.tools.ide.qde.core.IntelCErrorParser;com.qnx.tools.ide.qde.core.QdeExtraMakeErrorParser;org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.VCErrorParser;</value>
-				</dictionary>
-				<dictionary>
-					<key>org.eclipse.cdt.make.core.build.command</key>
-					<value>make</value>
-				</dictionary>
-				<dictionary>
-					<key>org.eclipse.cdt.make.core.build.location</key>
+					<key>?name?</key>
 					<value></value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.build.target.auto</key>
-					<value>all</value>
+					<key>org.eclipse.cdt.make.core.append_environment</key>
+					<value>false</value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.build.target.clean</key>
-					<value>clean</value>
+					<key>org.eclipse.cdt.make.core.buildArguments</key>
+					<value></value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.build.target.full</key>
-					<value>all</value>
+					<key>org.eclipse.cdt.make.core.buildCommand</key>
+					<value>make</value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.build.target.inc</key>
-					<value>all</value>
+					<key>org.eclipse.cdt.make.core.buildLocation</key>
+					<value>./</value>
+				</dictionary>
+				<dictionary>
+					<key>org.eclipse.cdt.make.core.contents</key>
+					<value>org.eclipse.cdt.make.core.activeConfigSettings</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.enableAutoBuild</key>
@@ -50,8 +46,8 @@
 					<value>true</value>
 				</dictionary>
 				<dictionary>
-					<key>org.eclipse.cdt.make.core.enabledIncrementalBuild</key>
-					<value>true</value>
+					<key>org.eclipse.cdt.make.core.environment</key>
+					<value>QNX_HOST=C:/QNX650/host/win32/x86|MAKEFLAGS=-IC:/QNX650/target/qnx6/usr/include|QNX_TARGET=C:/QNX650/target/qnx6|PATH=C:\\QNX650\\host\\win32\\x86\\usr\\bin;C:\\QNX650\\host\\win32\\x86\\bin;C:\\QNX650\\host\\win32\\x86\\usr\\sbin;C:\\QNX650\\host\\win32\\x86\\sbin;C:/QNX650/host/win32/x86/usr/qde/eclipse/jre/bin/client;C:/QNX650/host/win32/x86/usr/qde/eclipse/jre/bin;C:\\Program Files\\Common Files\\Siemens\\Automation\\Simatic OAM\\bin;C:\\PROGRA~2\\Borland\\CBUILD~1\\Bin;C:\\PROGRA~2\\Borland\\CBUILD~1\\Projects\\Bpl;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files (x86)\\Atmel\\AVR Tools\\AVR Toolchain\\bin;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\M1 Licensing;C:\\Program Files (x86)\\Intel\\iCLS Client;C:\\Program Files\\Intel\\iCLS Client;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\MATLAB\\MATLAB Production Server\\R2015a\\runtime\\win64;C:\\Program Files\\MATLAB\\MATLAB Production Server\\R2015a\\bin;C:\\Program Files\\MATLAB\\MATLAB Production Server\\R2015a\\polyspace\\bin;C:\\Program Files\\PuTTY;C:\\Program Files (x86)\\Windows Kits\\8.1\\Windows Performance Toolkit;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files (x86)\\QNX Software Systems\\bin;C:\\QNX650\\host\\win32\\x86\\usr\\bin;C:\\Program Files (x86)\\QNX Software Systems\\bin;C:\\Users\\Dariusz\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files (x86)\\Atmel\\Flip 3.4.7\\bin;C:\\Program Files (x86)\\Common Files\\Hilscher GmbH\\TLRDecode;|</value>
 				</dictionary>
 				<dictionary>
 					<key>org.eclipse.cdt.make.core.stopOnError</key>
@@ -63,9 +59,15 @@
 				</dictionary>
 			</arguments>
 		</buildCommand>
+		<buildCommand>
+			<name>org.eclipse.cdt.managedbuilder.core.ScannerConfigBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.cdt.core.cnature</nature>
-		<nature>com.qnx.tools.ide.qde.core.qnxnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.ScannerConfigNature</nature>
 	</natures>
 </projectDescription>
