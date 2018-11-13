@@ -20,7 +20,7 @@ unsigned int rec_h[5];
 
 int main(int argc, char *argv[]) {
 
-	int fd,res,s_res;
+	int fd,res,s_res,reg_index;
 
 		fd = open( "/dev/ser1", O_RDWR);
 		if (fd != -1) printf("(%d)- Port otwarty \n", fd);
@@ -40,23 +40,26 @@ int main(int argc, char *argv[]) {
 		    		{
 		    		strncpy(data, &rec_buf[5], res-5-3 );
 		    		//printf("DANE: Wartosc rejestru %.*s \n",res,rec_buf);
-		    			if('0'<(int)rec_buf[4]<'9') reg_index = (int)rec_buf[4] - '0';
+		    			if('0' <= (int)rec_buf[4] && (int)rec_buf[4] <= '9') 		reg_index = (int)rec_buf[4] - '0';
+		    			else if ('A' <= (int)rec_buf[4] && (int)rec_buf[4] <= 'F') 	reg_index = (int)rec_buf[4] - 55;
+		    			else if ('a' <= (int)rec_buf[4] && (int)rec_buf[4] <= 'f') 	reg_index = (int)rec_buf[4] - 87;
+		    			printf("Register index => %d \n",reg_index);
 
-		    			if (0<=((int)rec_buf[4]-'0') && ((int)rec_buf[4]-'0')<=5)
+		    			if (0<= reg_index && reg_index <=5)
 		    				{
-		    					rec_f[((int)rec_buf[4]-'0')] = strtof(&data,NULL);
-		    					printf("Zapisane %f w rej %d \n",rec_f[((int)rec_buf[4]-'0')],((int)rec_buf[4]-'0'));
+		    					rec_f[reg_index] = strtof(&data,NULL);
+		    					printf("Zapisane %f w rej %d \n",rec_f[reg_index],reg_index);
 		    				}
-		    			else if (6<=((int)rec_buf[4]-'0')<=10)
+		    			else if (6<=reg_index && reg_index<=10)
 		    				{
-		    					strncpy(rec_c[((int)rec_buf[4]-'0')-6], &data, res-2-5 );
-		    					printf("Zapisane %s w rej %d \n",rec_c[((int)rec_buf[4]-'0')-6],((int)rec_buf[4]-'0'));
+		    					strncpy(rec_c[reg_index], &data, res-2-5 );
+		    					printf("Zapisane %s w rej %d \n",rec_c[reg_index],reg_index);
 		    				}
 
-		    			else if (11<=((int)rec_buf[4]-'0')<=16)
+		    			else if (11<=reg_index && reg_index<=16)
 		    				{
-		    					rec_h[((int)rec_buf[4]-'0')-11] = strtod(&data,NULL);
-		    					printf("Zapisane %d w rej %d \n",rec_h[((int)rec_buf[4]-'0')-11],((int)rec_buf[4]-'0'));
+		    					rec_h[reg_index] = strtod(&data,NULL);
+		    					printf("Zapisane %d w rej %d \n",rec_h[reg_index],reg_index);
 		    				}
 		    			memset(data,NULL,sizeof(data));
 		    		}
